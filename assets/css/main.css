@@ -2054,3 +2054,10 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.sticky-div {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 125px; /* Adjust as needed */
+  height: fit-content; /* Ensure it adjusts based on its content */
+}
