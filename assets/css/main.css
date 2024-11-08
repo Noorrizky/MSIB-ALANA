@@ -945,6 +945,17 @@ section,
   color: var(--accent-color);
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Ensure the icon stays within the container */
+  width: 100px; /* Adjust as necessary */
+  height: 100px; /* Adjust as necessary */
+  margin: 0 auto; /* Center align for block elements */
+}
+
+
 @media (min-width: 640px) {
   .hero .icon-box:hover {
     transform: scale(1.08);
