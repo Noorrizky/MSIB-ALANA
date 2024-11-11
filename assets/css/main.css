@@ -43,6 +43,16 @@
 .custom-spacing {
   margin-bottom: 2rem; /* Adjust value as needed */
 }
+
+.icon-box a img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-box a img:hover {
+  filter: brightness(1.2); /* Menambah sedikit kecerahan pada teks */
+  transform: scale(1.1); /* Sedikit memperbesar gambar untuk menonjolkan efek hover */
+}
+
 /* ADDED BY NOORRIZKY */
 
 
