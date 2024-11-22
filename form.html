@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Access Authorization - PMS Request Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 20mm;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            h1, h2, h4 {
+                font-size: 16pt;
+                text-align: center;
+            }
+
+            p, label, input, textarea, table {
+                font-size: 10pt;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 5px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            /* Adjust margins for printing */
+            .mt-5, .mt-4, .mt-3, .mb-3 {
+                margin-top: 10px !important;
+                margin-bottom: 10px !important;
+            }
+        }
+
+        /* For screen display */
+        .form-check-label {
+            margin-left: 10px; /* Add margin to the left of the label */
+            display: inline-block; /*Allow width adjustment */
+            width: 150px; /* Adjust width as needed */
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">SYSTEM ACCESS AUTHORIZATION</h1>
+        <h2 class="text-center">PMS REQUEST FORM</h2>
+        <hr>
+
+        <!-- General Information -->
+        <div class="mt-4">
+            <h4 class="text-center">General Information</h4>
+            <form>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="date-request" class="form-label">Date Request:</label>
+                        <input type="date" id="date-request" name="date-request" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="position" class="form-label">Position:</label>
+                        <input type="text" id="position" name="position" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="department" class="form-label">Department:</label>
+                        <input type="text" id="department" name="department" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="mobile-phone" class="form-label">Mobile Phone:</label>
+                        <input type="tel" id="mobile-phone" name="mobile-phone" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+
+        <!-- Action Requested -->
+        <div class="mt-4">
+            <h4 class="text-center">Action Requested</h4>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="action" value="create" id="create">Create Account
+                    </label>
+                </div>
+                <div class="col-md-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="action" value="modify" id="modify">Modify Account
+                        </label>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="action" value="suspend" id="suspend">Suspend Account
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="action" value="delete" id="delete">Delete Account
+                    </label>
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="user-id" class="form-label">PMS / VHP User ID:</label>
+                <input type="text" id="user-id" name="user-id" class="form-control">
+            </div>
+            <p class="mt-1">Password: (will send to staff directly)</p>
+        </div>
+        
+        <hr>
+
+        <!-- Access Modification -->
+        <div class="mt-4">
+            <h4 class="text-center">Access Modification</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="front-office">
+                        <label class="form-check-label" for="front-office">Front Office</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="f-o-cashier">
+                        <label class="form-check-label" for="f-o-cashier">F/O Cashier</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="housekeeping">
+                        <label class="form-check-label" for="housekeeping">Housekeeping</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="income-audit">
+                        <label class="form-check-label" for="income-audit">Income Audit</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="operator">
+                        <label class="form-check-label" for="operator">Operator</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sales-marketing">
+                        <label class="form-check-label" for="sales-marketing">Sales Marketing</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="night-audit">
+                        <label class="form-check-label" for="night-audit">Night Audit</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="account-receivable">
+                        <label class="form-check-label" for="account-receivable">Account Receivable</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pos">
+                        <label class="form-check-label" for="pos">POS</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="purchasing">
+                        <label class="form-check-label" for="purchasing">Purchasing</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="general-cashier">
+                        <label class="form-check-label" for="general-cashier">General Cashier</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="inventory-cost-control">
+                        <label class="form-check-label" for="inventory-cost-control">Inventory/Cost Control</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="general-ledger">
+                        <label class="form-check-label" for="general-ledger">General Ledger</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="banquet">
+                        <label class="form-check-label" for="banquet">Banquet</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="others" class="form-label">Others (Please write 3 digit access code needed):</label>
+                <input type="text" id="others" name="others" class="form-control">
+            </div>
+            <label for="reason" class="form-label">State the reason why you need this access:</label>
+            <textarea id="reason" name="reason" class="form-control" rows="1"></textarea>
+        </div>
+        <hr>
+
+        <!-- Approval Table -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Requested by</th>
+                    <th>Approved by Dept. Head</th>
+                    <th>Approved by Finance Leader</th>
+                    <th>Approved by Hotel/General Manager</th>
+                    <th>Verified and Created by IT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><br><br></td>
+                    <td><br><br></td>
+                    <td><br><br></td>
+                    <td><br><br></td>
+                    <td><br><br></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Footer -->
+        <div class=" text-muted">
+            <p><i>Please keep this information confidential. Always use a strong password (min. 8 characters and alphanumeric combination with some uppercase). Change your password every 6 months. If you have any questions, please do not hesitate to contact IT.</i></p>
+            <p class="text-end">Date & time created on PMS:
+                <br>_______________________</p>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
